@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  --font-bricolage: "Bricolage Grotesque", serif;
+  --font-outfit: "Outfit", sans-serif;
+  --font-jetbrains: "JetBrains Mono", monospace;
+  --bg: #06080f;
+  --bg-2: #0b0f1c;
+  --bg-3: #111827;
+  --primary: #7c3aed;
+  --primary-light: #a78bfa;
+  --accent-cyan: #22d3ee;
+  --accent-pink: #f472b6;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border: rgba(255, 255, 255, 0.08);
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-hover: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-outfit);
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* Selection */
+::selection {
+  background: rgba(124, 58, 237, 0.4);
+  color: #fff;
+}
+
+/* Glass morphism utility */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+.glass-hover {
+  transition: all 0.3s ease;
+}
+.glass-hover:hover {
+  background: var(--glass-hover);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #f472b6 0%, #a78bfa 50%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow borders */
+.glow-border {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--bg-2), var(--bg-2)) padding-box,
+    linear-gradient(135deg, rgba(124, 58, 237, 0.5), rgba(34, 211, 238, 0.5))
+      border-box;
+}
+
+/* Section styles */
+.section-label {
+  font-family: var(--font-jetbrains);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+}
+
+.section-title {
+  font-family: var(--font-bricolage);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Noise overlay */
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Animated gradient border */
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(124, 58, 237, 0.4); }
+  50% { border-color: rgba(34, 211, 238, 0.4); }
+}
+
+.animate-border-glow {
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* Timeline line */
+.timeline-line {
+  background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+}
+
+/* Skill bar */
+.skill-bar {
+  background: linear-gradient(90deg, var(--primary), var(--accent-cyan));
+  border-radius: 999px;
+  height: 3px;
+  transition: width 1s ease-out;
+}
+
+/* Project card hover */
+.project-card {
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Swiper custom */
+.swiper-pagination-bullet {
+  background: var(--text-secondary) !important;
+  opacity: 0.5 !important;
+}
+.swiper-pagination-bullet-active {
+  background: var(--primary-light) !important;
+  opacity: 1 !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+}
+
+/* Input focus glow */
+.input-glow:focus {
+  outline: none;
+  border-color: rgba(124, 58, 237, 0.6);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+/* Floating animation for elements */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float-slow {
+  animation: floatY 5s ease-in-out infinite;
+}
+.animate-float-medium {
+  animation: floatY 4s ease-in-out infinite 1s;
+}
+
+/* Hero entrance animations (used in `components/Hero.tsx`) */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes animate-blob-1 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(40px, -30px) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes animate-blob-2 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-30px, -20px) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes animate-blob-3 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(25px, 25px) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* Apply keyframes to the hero blob utility classes */
+.animate-blob-1 {
+  animation: animate-blob-1 12s ease-in-out infinite;
+}
+.animate-blob-2 {
+  animation: animate-blob-2 14s ease-in-out infinite;
+}
+.animate-blob-3 {
+  animation: animate-blob-3 16s ease-in-out infinite;
+}
+
+/* Scroll reveal utility (JS-driven) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
