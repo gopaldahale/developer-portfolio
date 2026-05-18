@@ -32,10 +32,8 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled
-          ? "glass border-b border-white/8 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-          : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-[background,box-shadow,border-color] duration-500 outline-none ring-0 border-0",
+        scrolled ? "nav-scrolled" : "bg-transparent"
       )}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
@@ -105,7 +103,7 @@ export default function Navbar() {
           mobileOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
-        <div className="glass border-t border-white/8 px-4 py-4 flex flex-col gap-2">
+        <div className="border-t border-white/8 bg-bg/95 backdrop-blur-xl px-4 py-4 flex flex-col gap-2">
           {navLinks.map((link) => (
             <Link
               key={link.href}
