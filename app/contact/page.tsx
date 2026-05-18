@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import { profile } from "@/lib/profile";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -41,13 +42,13 @@ const contactInfo = [
 const socials = [
   {
     label: "GitHub",
-    href: "https://github.com",
+    href: profile.github,
     icon: Github,
     description: "Check out my code",
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: profile.linkedin,
     icon: Linkedin,
     description: "Connect professionally",
   },
@@ -62,9 +63,7 @@ const socials = [
 export default function ContactPage() {
   return (
     <div className="min-h-screen pt-24 pb-32">
-      {/* Header */}
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 text-center mb-16">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-64 rounded-full opacity-8 blur-[80px] bg-primary pointer-events-none" />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center mb-16">
         <span className="section-label">Say Hello</span>
         <h1
           className="section-title text-5xl sm:text-6xl text-white mt-3"

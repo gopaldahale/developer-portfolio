@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, Github, Linkedin, Sparkles } from "lucide-react";
+import { profile } from "@/lib/profile";
 
 const techBadges = [
   { label: "React", color: "#61DAFB", bg: "rgba(97, 218, 251, 0.1)" },
@@ -52,12 +53,12 @@ export default function Hero() {
           >
             <Sparkles className="w-3.5 h-3.5 text-accent-cyan" />
             <span className="text-white/70">
-              3+ Years Experience
+              {profile.yearsExperience}+ Years Experience
             </span>
             <span className="w-1 h-1 rounded-full bg-white/30" />
-            <span className="text-white/70">React</span>
+            <span className="text-white/70">React & Next.js</span>
             <span className="w-1 h-1 rounded-full bg-white/30" />
-            <span className="text-white/70">UI Engineering</span>
+            <span className="text-white/70">TypeScript</span>
           </div>
 
           {/* Main heading */}
@@ -89,7 +90,7 @@ export default function Hero() {
               className="text-lg sm:text-xl text-white/60 font-medium"
               style={{ fontFamily: "var(--font-jetbrains)" }}
             >
-              Frontend Developer
+              {profile.role}
             </span>
             <div className="h-px w-12 bg-gradient-to-l from-transparent to-white/30" />
           </div>
@@ -104,9 +105,9 @@ export default function Hero() {
           >
             I build{" "}
             <span className="text-white/80 font-medium">
-              fast, scalable, and visually polished
+              responsive, scalable, and production-ready
             </span>{" "}
-            web interfaces using React & modern frontend tooling.
+            web applications with React, Next.js, and modern frontend tooling.
           </p>
 
           {/* CTA Buttons */}
@@ -141,7 +142,7 @@ export default function Hero() {
             }}
           >
             <a
-              href="https://github.com"
+              href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-lg glass glass-hover text-white/50 hover:text-white transition-colors"
@@ -150,7 +151,7 @@ export default function Hero() {
               <Github className="w-4 h-4" />
             </a>
             <a
-              href="https://linkedin.com"
+              href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2.5 rounded-lg glass glass-hover text-white/50 hover:text-white transition-colors"
@@ -159,7 +160,7 @@ export default function Hero() {
               <Linkedin className="w-4 h-4" />
             </a>
             <span className="text-white/20 text-sm">·</span>
-            <span className="text-white/40 text-sm">Pune, India</span>
+            <span className="text-white/40 text-sm">{profile.locationShort}</span>
           </div>
 
           {/* Tech badges floating row */}

@@ -1,0 +1,75 @@
+{"data":"GOPAL DAHALE 
+React JS Developer | Frontend Developer
++91 9834020411 | gopaldahale77@gmail.com | LinkedIn | GitHub | Pune, Maharashtra, India
+
+
+
+PROFESSIONAL SUMMARY
+
+
+Frontend Developer with 3 years of experience building responsive, scalable web applications using React.js, Next.js, JavaScript, TypeScript, Redux Toolkit, Bootstrap and Tailwind CSS. Experienced in creating reusable UI components, integrating REST APIs, and optimizing performance for production-ready applications. Familiar with backend technologies such as Node.js and PostgreSQL, with an interest in expanding full-stack development knowledge.
+
+TECHNICAL SKILLS
+
+
+Languages:  JavaScript (ES6+), TypeScript, HTML5, CSS3
+Frontend Frameworks / Libraries:  React.js, Next.js, Redux Toolkit, Tailwind CSS, Bootstrap, React Router, shadcn/ui, React Query, Context API
+Tools & Platforms: Git, GitHub, REST APIs, Postman, Contentful (CMS), Microsoft Graph API, OpenAI API, Chrome DevTools, VS Code, Figma
+Deployment:  Vercel, Railway, Supabase, GitHub Integration
+Backend (Familiar):  Node JS, Express JS, NestJS, MongoDB, PostgreSQL, Prisma
+
+WORK EXPERIENCE
+
+
+Frontend Developer  —  TruPerformance Inc.        Aug 2023 – Present
+Developed responsive, scalable web applications using React JS, Next JS, TypeScript, and Tailwind CSS across multiple client projects.
+Built reusable UI component libraries and complex multi step forms, integrating REST APIs with Redux Toolkit for efficient state management.
+Optimized frontend performance through SEO best practices, API caching, and lazy loading, achieving near-perfect Core Web Vitals scores across client websites.
+Collaborated with designers and backend teams in Agile workflows using Git and GitHub for feature branching and code reviews.
+
+
+
+PROJECTS
+
+
+VRC — Admin Dashboard & Game Setup UI
+React JS  ·  TypeScript  ·  Redux Toolkit · shadcn/ui  ·  Tailwind CSS
+Built a fully functional admin dashboard and multi-step game configuration forms using React JS and TypeScript following component driven architecture.
+Architected a reusable UI component library built on shadcn/ui (inputs, dropdowns, toggles etc) ensuring consistent, accessible UI components across the dashboard.
+Managed complex multi-step form state and async API submissions using React built-in state management.
+Collaborated via Git & GitHub using feature branching, pull requests, and code review workflows.
+
+Netarx — Client Portfolio Website
+Next JS · React JS · Tailwind CSS · Contentful CMS · Vercel Blob
+Contributed to frontend development of client portfolio websites built on Next JS with Contentful as headless CMS for dynamic content management.
+Implemented SEO best practices, API caching, and lazy loading, helping achieve Lighthouse performance scores of 99–100.
+Built reusable page components and content driven layouts integrated with Contentful APIs for flexible, editor-friendly content updates.
+
+MailPilot — AI-Powered Outlook Email Assistant
+React JS  ·  Redux Toolkit  ·  NestJS  ·  TypeScript  ·  Prisma  ·  PostgreSQL  ·  Microsoft Graph API  ·  GeminiAI API
+Built a full stack AI powered Outlook email assistant using React JS, Redux Toolkit, NestJS, Prisma, and PostgreSQL, improving email workflow automation by 70%.
+Integrated Microsoft Graph API with secure OAuth 2.0 authentication to enable email retrieval, search, and sending with 99% reliable API communication.
+Developed conversational AI features using GeminiAI APIs for email summarization, smart replies, and contextual search, reducing manual email handling time by 60%.
+Architected a scalable mono-repo based SaaS system with modular backend services, validation, security middleware, and clean architecture practices, improving maintainability and scalability by 80%.
+
+HealthDesk - Doctor Appointment Booking System
+Skills: React JS, Context API, Tailwind CSS, JavaScript, REST API, JWT Authentication, Axios, Node JS, MongoDB
+Developed the frontend of a MERN-based healthcare platform enabling patient registration, doctor search by specialization, and appointment booking.
+Implemented role-based dashboards (Patient, Doctor, Admin) with JWT authentication and protected routes in React JS.
+Built Doctor and Admin panels for managing appointments, approving registrations, and monitoring platform activity.
+Integrated REST APIs using Axios with Redux Toolkit for state management and designed a responsive UI using Tailwind CSS.
+
+
+CERTIFICATIONS & ACHIEVEMENTS
+
+
+The Complete 2023 Web Development Bootcamp — Udemy  |  2023
+Rising Star Award — Q2 2024, TruPerformance Inc.
+
+EDUCATION
+
+
+Bachelor of Technology (B.Tech) — Mechanical Engineering
+Deogiri Institute of Engineering and Management Studies, Aurangabad
+July 2017 – September 2021  |  CGPA: 8.59
+"}

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Linkedin, Mail, Code2 } from "lucide-react";
+import { profile } from "@/lib/profile";
 
 const footerLinks = [
   { href: "/", label: "Home" },
@@ -10,17 +11,17 @@ const footerLinks = [
 
 const socials = [
   {
-    href: "https://github.com",
+    href: profile.github,
     icon: Github,
     label: "GitHub",
   },
   {
-    href: "https://linkedin.com",
+    href: profile.linkedin,
     icon: Linkedin,
     label: "LinkedIn",
   },
   {
-    href: "mailto:gopaldahale77@gmail.com",
+    href: `mailto:${profile.email}`,
     icon: Mail,
     label: "Email",
   },
@@ -43,11 +44,11 @@ export default function Footer() {
                 className="font-bold text-base gradient-text"
                 style={{ fontFamily: "var(--font-bricolage)" }}
               >
-                Gopal Dahale
+                {profile.name}
               </span>
             </Link>
             <p className="text-xs text-white/30 max-w-xs text-center md:text-left">
-              Frontend Developer · Building fast, scalable web interfaces.
+              {profile.role} · Building fast, scalable web interfaces.
             </p>
           </div>
 

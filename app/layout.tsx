@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Gopal Dahale",
   },
   description:
-    "Frontend Developer with 3+ years of experience building responsive, scalable web applications using React.js, TypeScript, and Tailwind CSS.",
+    "Frontend Developer with 3 years of experience building responsive, scalable web applications using React.js, Next.js, TypeScript, Redux Toolkit, and Tailwind CSS.",
   keywords: [
     "Frontend Developer",
     "React Developer",

@@ -4,3 +4,10 @@ out
 .env
 .env.local
 .DS_Store
+
+# Production build logs and artifacts
+build/
+dist/
+
+# Local environment variables (NEVER commit these to Git)
+.env

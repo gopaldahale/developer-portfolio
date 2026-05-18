@@ -2,11 +2,12 @@
 
 import { useEffect, useRef } from "react";
 import { User, Zap, Code, Award } from "lucide-react";
+import { profile } from "@/lib/profile";
 
 const stats = [
-  { label: "Years Experience", value: "3+", icon: Award },
+  { label: "Years Experience", value: `${profile.yearsExperience}+`, icon: Award },
   { label: "Projects Delivered", value: "10+", icon: Code },
-  { label: "Perf. Improvement", value: "30%", icon: Zap },
+  { label: "Lighthouse Score", value: "99+", icon: Zap },
 ];
 
 export default function About() {
@@ -54,42 +55,13 @@ export default function About() {
             </div>
 
             <div className="space-y-4 text-white/60 leading-relaxed reveal">
-              <p>
-                Frontend Developer with{" "}
-                <span className="text-white/80 font-medium">
-                  2.9+ years of experience
-                </span>{" "}
-                building responsive, high-performance web applications using
-                React JS, TypeScript, Redux Toolkit, and Tailwind CSS.
-              </p>
-              <p>
-                Hands-on with developing admin dashboards, full-stack MERN
-                applications, and pixel-perfect UIs. I focus on{" "}
-                <span className="text-white/80 font-medium">
-                  clean code architecture, cross-browser compatibility,
-                </span>{" "}
-                and mobile-first design.
-              </p>
-              <p>
-                Currently at{" "}
-                <span className="text-accent-cyan font-medium">
-                  TruPerformance Inc.
-                </span>{" "}
-                where I've improved page load speeds by up to 30% and built
-                production-ready React component systems.
-              </p>
+              {profile.aboutParagraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
             </div>
 
-            {/* Tech highlights */}
             <div className="grid grid-cols-2 gap-3 reveal">
-              {[
-                "React JS / TypeScript",
-                "Redux Toolkit",
-                "Tailwind CSS",
-                "REST APIs & JWT",
-                "Node.js / Express",
-                "MongoDB",
-              ].map((tech) => (
+              {profile.techHighlights.map((tech) => (
                 <div
                   key={tech}
                   className="flex items-center gap-2 text-sm text-white/60"
@@ -148,13 +120,13 @@ export default function About() {
                     <span className="text-white">{"  "}</span>
                     <span className="text-cyan-400">role</span>
                     <span className="text-white">: </span>
-                    <span className="text-emerald-400">'Frontend Dev'</span>
+                    <span className="text-emerald-400">'{profile.role}'</span>
                     <span className="text-white">,</span>
                     {"\n"}
                     <span className="text-white">{"  "}</span>
                     <span className="text-cyan-400">experience</span>
                     <span className="text-white">: </span>
-                    <span className="text-orange-400">3</span>
+                    <span className="text-orange-400">{profile.yearsExperience}</span>
                     <span className="text-white">,</span>
                     {"\n"}
                     <span className="text-white">{"  "}</span>
@@ -168,7 +140,7 @@ export default function About() {
                     <span className="text-white">,</span>
                     {"\n"}
                     <span className="text-white">{"    "}</span>
-                    <span className="text-emerald-400">'Tailwind'</span>
+                    <span className="text-emerald-400">'Next.js'</span>
                     <span className="text-white">, </span>
                     <span className="text-emerald-400">'Redux'</span>
                     {"\n"}

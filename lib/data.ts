@@ -1,3 +1,10 @@
+export interface DemoSlide {
+  type: "image" | "iframe";
+  src: string;
+  alt?: string;
+  caption?: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -12,65 +19,34 @@ export interface Project {
   featured: boolean;
   gradient: string;
   icon: string;
+  /** Carousel slides for the Live Demo modal. Add image paths or iframe URLs when ready. */
+  demoSlides?: DemoSlide[];
 }
 
 export const projects: Project[] = [
   {
-    slug: "healthdesk",
-    title: "HealthDesk",
-    subtitle: "Doctor Appointment Booking System",
-    description:
-      "A full-stack MERN healthcare platform enabling patient registration, doctor search by specialization, and appointment booking with role-based dashboards.",
-    longDescription:
-      "HealthDesk is a comprehensive healthcare management platform built on the MERN stack. It provides a seamless experience for patients to find doctors by specialization, book appointments, and manage their health records. Doctors can manage their schedules, approve or reject appointments, and view patient details. Admins have full oversight of the platform including approval workflows and analytics.",
-    tech: [
-      "React JS",
-      "Node.js",
-      "MongoDB",
-      "Express",
-      "JWT Auth",
-      "Redux Toolkit",
-      "Tailwind CSS",
-      "Axios",
-    ],
-    features: [
-      "Patient registration and profile management",
-      "Doctor search by specialization and availability",
-      "Real-time appointment booking and management",
-      "Role-based dashboards for Patient, Doctor, and Admin",
-      "JWT authentication with protected routes",
-      "Admin panel for platform monitoring and approvals",
-    ],
-    liveUrl: "#",
-    githubUrl: "#",
-    category: "Full Stack",
-    featured: true,
-    gradient: "from-violet-600/20 to-cyan-600/20",
-    icon: "🏥",
-  },
-  {
     slug: "vrc-dashboard",
-    title: "VRC Admin Dashboard",
-    subtitle: "Game Setup & Configuration UI",
+    title: "VRC",
+    subtitle: "Admin Dashboard & Game Setup UI",
     description:
-      "A fully functional admin dashboard and game configuration UI built with React JS, TypeScript, and Redux Toolkit for complex multi-step game setup flows.",
+      "A fully functional admin dashboard and multi-step game configuration UI built with React, TypeScript, and shadcn/ui following component-driven architecture.",
     longDescription:
-      "The VRC (Very Rich Challenge) Admin Dashboard is a sophisticated game management platform built with a component-driven architecture. It features complex multi-step game configuration workflows, centralized state management with Redux Toolkit, and a library of reusable, type-safe UI components. The dashboard handles intricate data flows across multiple game setup stages.",
+      "Built a production admin dashboard and complex multi-step game configuration flows for VRC. Architected a reusable UI component library on shadcn/ui — inputs, dropdowns, toggles, and more — ensuring consistent, accessible components across the dashboard. Managed async API submissions and multi-step form state with React, collaborating via Git feature branches, pull requests, and code reviews.",
     tech: [
-      "React JS",
+      "React.js",
       "TypeScript",
       "Redux Toolkit",
+      "shadcn/ui",
       "Tailwind CSS",
       "Git",
-      "GitHub",
     ],
     features: [
+      "Admin dashboard with complex data tables and modals",
       "Multi-step game configuration forms",
-      "Centralized Redux Toolkit state management",
-      "Reusable type-safe component library",
-      "Responsive admin dashboard layout",
-      "Complex data tables, modals, and drawers",
-      "Feature branch Git workflow with PR reviews",
+      "Reusable shadcn/ui component library",
+      "Async API integration with robust state handling",
+      "Component-driven, type-safe architecture",
+      "Git workflow with PRs and code reviews",
     ],
     liveUrl: "#",
     githubUrl: "#",
@@ -78,30 +54,111 @@ export const projects: Project[] = [
     featured: true,
     gradient: "from-fuchsia-600/20 to-purple-600/20",
     icon: "🎮",
+    // Add slides when ready, e.g.:
+    // demoSlides: [
+    //   { type: "image", src: "/demos/vrc-dashboard.png", alt: "Admin dashboard" },
+    //   { type: "iframe", src: "https://your-demo-url.com", alt: "Live preview" },
+    // ],
+    demoSlides: [],
   },
   {
-    slug: "react-component-library",
-    title: "React UI Library",
-    subtitle: "Reusable Component System",
+    slug: "netarx",
+    title: "Netarx",
+    subtitle: "Client Portfolio Website",
     description:
-      "A production-ready library of accessible React components built with TypeScript and Tailwind CSS, designed for rapid enterprise application development.",
+      "Contributed to client portfolio websites on Next.js with Contentful CMS, achieving Lighthouse performance scores of 99–100 through SEO and caching optimizations.",
     longDescription:
-      "A carefully crafted component library designed for enterprise-grade applications. Each component follows accessibility best practices (WCAG 2.1), supports dark/light theming, and is fully typed with TypeScript. Includes form elements, data display components, navigation, and layout primitives—all with comprehensive documentation.",
-    tech: ["React JS", "TypeScript", "Tailwind CSS", "CSS Modules", "Rollup"],
+      "Contributed to frontend development of client portfolio websites built on Next.js with Contentful as a headless CMS for dynamic content management. Implemented SEO best practices, API caching, and lazy loading to achieve Lighthouse performance scores of 99–100. Built reusable page components and content-driven layouts integrated with Contentful APIs for flexible, editor-friendly updates.",
+    tech: [
+      "Next.js",
+      "React.js",
+      "Tailwind CSS",
+      "Contentful CMS",
+      "Vercel Blob",
+    ],
     features: [
-      "Accessible components following WCAG 2.1 standards",
-      "Full TypeScript support with strict types",
-      "Dark and light theme variants",
-      "Comprehensive component documentation",
-      "Tree-shakeable exports for optimal bundle size",
-      "Animated micro-interactions and transitions",
+      "Next.js with Contentful headless CMS integration",
+      "SEO best practices and metadata optimization",
+      "API caching and lazy loading for performance",
+      "Lighthouse scores of 99–100",
+      "Reusable, content-driven page layouts",
+      "Deployed on Vercel with blob asset storage",
     ],
     liveUrl: "#",
     githubUrl: "#",
-    category: "Library",
+    category: "Client Site",
+    featured: true,
+    gradient: "from-cyan-600/20 to-blue-600/20",
+    icon: "🌐",
+    demoSlides: [],
+  },
+  {
+    slug: "mailpilot",
+    title: "MailPilot",
+    subtitle: "AI-Powered Outlook Email Assistant",
+    description:
+      "Full-stack AI email assistant using React, Redux Toolkit, NestJS, and PostgreSQL — integrating Microsoft Graph API and Gemini AI for smart email workflows.",
+    longDescription:
+      "Built a full-stack AI-powered Outlook email assistant using React.js, Redux Toolkit, NestJS, Prisma, and PostgreSQL, improving email workflow automation by 70%. Integrated Microsoft Graph API with secure OAuth 2.0 for email retrieval, search, and sending. Developed conversational AI features with Gemini APIs for summarization, smart replies, and contextual search. Architected a scalable mono-repo SaaS system with modular backend services and clean architecture practices.",
+    tech: [
+      "React.js",
+      "Redux Toolkit",
+      "NestJS",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Microsoft Graph API",
+      "Gemini AI",
+    ],
+    features: [
+      "Microsoft Graph API with OAuth 2.0 authentication",
+      "AI email summarization and smart replies via Gemini",
+      "70% improvement in email workflow automation",
+      "NestJS backend with Prisma and PostgreSQL",
+      "Scalable mono-repo SaaS architecture",
+      "Modular services with validation and security middleware",
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+    category: "SaaS",
+    featured: true,
+    gradient: "from-violet-600/20 to-indigo-600/20",
+    icon: "✉️",
+    demoSlides: [],
+  },
+  {
+    slug: "healthdesk",
+    title: "HealthDesk",
+    subtitle: "Doctor Appointment Booking System",
+    description:
+      "MERN-based healthcare platform for patient registration, doctor search by specialization, and appointment booking with role-based dashboards.",
+    longDescription:
+      "Developed the frontend of a MERN-based healthcare platform enabling patient registration, doctor search by specialization, and appointment booking. Implemented role-based dashboards for Patient, Doctor, and Admin with JWT authentication and protected routes. Built Doctor and Admin panels for managing appointments, approving registrations, and monitoring platform activity, with a responsive UI using Tailwind CSS.",
+    tech: [
+      "React.js",
+      "Context API",
+      "Tailwind CSS",
+      "JavaScript",
+      "Node.js",
+      "MongoDB",
+      "JWT",
+      "Axios",
+    ],
+    features: [
+      "Patient registration and doctor search by specialization",
+      "Appointment booking and management flows",
+      "Role-based dashboards: Patient, Doctor, Admin",
+      "JWT authentication with protected routes",
+      "Doctor and Admin approval workflows",
+      "REST API integration with Axios",
+    ],
+    liveUrl: "#",
+    githubUrl: "#",
+    category: "Full Stack",
     featured: true,
     gradient: "from-emerald-600/20 to-teal-600/20",
-    icon: "🧩",
+    icon: "🏥",
+    demoSlides: [],
   },
 ];
 
@@ -112,59 +169,59 @@ export interface SkillCategory {
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: "Frontend",
+    name: "Languages",
     skills: [
-      { name: "React JS", level: 95 },
-      { name: "JavaScript (ES6+)", level: 90 },
-      { name: "TypeScript", level: 85 },
+      { name: "JavaScript (ES6+)", level: 92 },
+      { name: "TypeScript", level: 88 },
       { name: "HTML5", level: 95 },
       { name: "CSS3", level: 90 },
     ],
   },
   {
-    name: "Styling",
+    name: "Frontend",
     skills: [
+      { name: "React.js", level: 95 },
+      { name: "Next.js", level: 88 },
+      { name: "Redux Toolkit", level: 88 },
       { name: "Tailwind CSS", level: 92 },
       { name: "Bootstrap", level: 85 },
-      { name: "AOS", level: 78 },
-      { name: "Swiper JS", level: 80 },
     ],
   },
   {
-    name: "State & API",
+    name: "Tools & APIs",
     skills: [
-      { name: "Redux Toolkit", level: 88 },
-      { name: "Context API", level: 85 },
       { name: "REST APIs", level: 90 },
-      { name: "Axios", level: 88 },
-      { name: "JWT Auth", level: 82 },
+      { name: "React Query", level: 82 },
+      { name: "Git / GitHub", level: 90 },
+      { name: "Postman", level: 85 },
+      { name: "Figma", level: 78 },
     ],
   },
   {
-    name: "Backend & Tools",
+    name: "Backend (Familiar)",
     skills: [
-      { name: "Node JS", level: 72 },
-      { name: "Express JS", level: 70 },
+      { name: "Node.js", level: 72 },
+      { name: "NestJS", level: 68 },
+      { name: "PostgreSQL", level: 70 },
       { name: "MongoDB", level: 68 },
-      { name: "Git / GitHub", level: 88 },
-      { name: "Vercel", level: 85 },
+      { name: "Prisma", level: 65 },
     ],
   },
 ];
 
 export const techPills = [
-  "React JS",
-  "TypeScript",
-  "Tailwind CSS",
-  "Redux Toolkit",
-  "Node.js",
-  "MongoDB",
-  "REST APIs",
-  "JWT Auth",
-  "Git",
+  "shadcn/ui",
+  "React Query",
+  "Contentful",
   "Vercel",
-  "Next.js",
-  "Express",
+  "Railway",
+  "Supabase",
+  "NestJS",
+  "Postman",
+  "Chrome DevTools",
+  "OpenAI API",
+  "Microsoft Graph API",
+  "React Router",
 ];
 
 export interface ExperienceItem {
@@ -178,18 +235,16 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Front-End Engineer",
+    role: "Frontend Developer",
     company: "TruPerformance Inc.",
     duration: "Aug 2023 – Present",
     type: "Full-time",
     location: "Remote",
     contributions: [
-      "Built pixel-perfect, cross-browser UIs with React JS and modern JavaScript",
-      "Improved page load speed by 30% through Core Web Vitals optimization (LCP, FID, CLS)",
-      "Developed reusable, modular components integrated with REST APIs",
-      "Implemented responsive layouts using Tailwind CSS and Bootstrap",
-      "Integrated third-party APIs and lead-capture forms for business automation",
-      "Collaborated with design and back-end teams via Git & GitHub workflows",
+      "Developed responsive, scalable web applications using React.js, Next.js, TypeScript, and Tailwind CSS across multiple client projects",
+      "Built reusable UI component libraries and complex multi-step forms, integrating REST APIs with Redux Toolkit",
+      "Optimized frontend performance through SEO, API caching, and lazy loading — achieving near-perfect Core Web Vitals scores",
+      "Collaborated with designers and backend teams in Agile workflows using Git and GitHub for feature branching and code reviews",
     ],
   },
 ];
@@ -207,7 +262,8 @@ export const education: EducationItem[] = [
   {
     degree: "Bachelor of Technology (B.Tech)",
     field: "Mechanical Engineering",
-    institution: "Deogiri Institute of Engineering and Management Studies",
+    institution:
+      "Deogiri Institute of Engineering and Management Studies, Aurangabad",
     location: "Aurangabad",
     duration: "July 2017 – September 2021",
     cgpa: "8.59",
