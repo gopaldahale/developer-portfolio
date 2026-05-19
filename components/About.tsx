@@ -75,7 +75,9 @@ export default function About() {
             {/* Download CV */}
             <div className="reveal">
               <a
-                href="#"
+                href="https://docs.google.com/document/d/1c79UvgHK3Enf9QuDJa1aMFe0Gq5hvFX5/edit"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg glass glow-border text-sm font-medium text-white/80 hover:text-white transition-all duration-300 hover:border-primary/40"
               >
                 <User className="w-4 h-4 text-primary-light" />
