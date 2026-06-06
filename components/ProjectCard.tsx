@@ -42,15 +42,15 @@ export default function ProjectCard({
           featured ? "flex flex-col" : ""
         )}
       >
-        <div
+        {/* <div
           className={cn("h-1 w-full bg-gradient-to-r", project.gradient.replace("/20", ""))}
-        />
+        /> */}
 
         <div
           className={cn(
-            "relative w-full bg-gradient-to-br overflow-hidden",
+            "hola relative w-full overflow-hidden bg-gradient-to-br from-primary to-accent-cyan",
             featured ? "h-44" : "h-36",
-            project.gradient
+            
           )}
         >
           <div
@@ -62,9 +62,17 @@ export default function ProjectCard({
             }}
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-5xl opacity-60 group-hover:scale-110 transition-transform duration-500">
-              {project.icon}
-            </span>
+            {project.icon.startsWith("/") || project.icon.includes(".") ? (
+              <img
+                src={project.icon}
+                alt={project.title}
+                className="w-100 h-auto group-hover:scale-110 transition-transform duration-500 object-contain"
+              />
+            ) : (
+              <span className="text-5xl group-hover:scale-110 transition-transform duration-500">
+                {project.icon}
+              </span>
+            )}
           </div>
           <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur text-xs font-medium text-white/70 border border-white/10">
             {project.category}
