@@ -84,13 +84,16 @@ export const projects: Project[] = [
       "Scalable mono-repo SaaS architecture",
       "Modular services with validation and security middleware",
     ],
-    liveUrl: "#",
+    liveUrl: "https://mailpilot-ai1.vercel.app/",
     githubUrl: "https://github.com/gopaldahale/mailpilot",
     category: "SaaS",
     featured: true,
     gradient: "from-violet-600/20 to-indigo-600/20",
     icon: "✉️",
-    demoSlides: [],
+    demoSlides: [
+      { type: "image", src: "/imgs/mailpilot.png", alt: "Live preview" },
+
+    ],
   },
   {
     slug: "healthdesk",
